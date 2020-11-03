@@ -8,9 +8,14 @@ use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
 {
-public function index()
+  /**
+   * index
+   *
+   * @return void
+   */
+ public function index()
  {
-     $galeri = Galeri::latest()->paginate(10);
-     return view('galeri.index', compact('galeri'));
+    $galeris = Galeri::latest()->paginate(10);
+    return view('galeri.index', compact('galeris'));
  }
 }

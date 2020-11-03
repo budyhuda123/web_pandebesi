@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('g.create') }}" class="btn btn-md btn-success mb-3">TAMBAH Foto</a>
+                        <a href="{{ route('galeri.create') }}" class="btn btn-md btn-success mb-3">TAMBAH Foto</a>
                         <table class="table table-bordered">
                             <thead>
                               <tr>
@@ -25,16 +25,16 @@
                               </tr>
                             </thead>
                             <tbody>
-                              @forelse ($galeri as $g)
+                              @forelse ($galeris as $galeri)
                                 <tr>
                                     <td class="text-center">
-                                        <img src="{{ Storage::url('public/galeri/').$g->image }}" class="rounded" style="width: 150px">
+                                        <img src="{{ Storage::url('public/galeris/').$galeri->image }}" class="rounded" style="width: 150px">
                                     </td>
-                                    <td>{{ $g->judulx}}</td>
-                                    <td>{!! $g->content !!}</td>
+                                    <td>{{ $galeri->judulx}}</td>
+                                    <td>{!! $galeri->content !!}</td>
                                     <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('g.destroy', $g->id) }}" method="POST">
-                                            <a href="{{ route('g.edit', $g->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('galeri.destroy', $galeri->id) }}" method="POST">
+                                            <a href="{{ route('galeri.edit', $galeri->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
@@ -48,7 +48,7 @@
                               @endforelse
                             </tbody>
                           </table>
-                          {{ $galeri->links() }}
+                          {{ $galeris->links() }}
                     </div>
                 </div>
             </div>
