@@ -24,3 +24,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::resource('produk', ProdukController::class);
 //route Galeri
 Route::resource('galeri', GaleriController::class);
+//route berita
+Route::resource('berita', beritaController::class);

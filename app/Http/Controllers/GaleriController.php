@@ -39,7 +39,7 @@ class GaleriController extends Controller
 
      $galeri = galeri::create([
          'foto'    => $foto->hashName(),
-         'judul'      => $request->judul
+         'judul'   => $request->judul
      ]);
 
      if($galeri){
