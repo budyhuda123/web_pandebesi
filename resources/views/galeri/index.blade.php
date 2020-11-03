@@ -28,9 +28,9 @@
                               @forelse ($galeris as $galeri)
                                 <tr>
                                     <td class="text-center">
-                                        <img src="{{ Storage::url('public/galeris/').$galeri->image }}" class="rounded" style="width: 150px">
+                                        <img src="{{ Storage::url('public/galeris/').$galeri->foto }}" class="rounded" style="width: 150px">
                                     </td>
-                                    <td>{{ $galeri->judulx}}</td>
+                                    <td>{{ $galeri->judul}}</td>
                                     <td>{!! $galeri->content !!}</td>
                                     <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('galeri.destroy', $galeri->id) }}" method="POST">
