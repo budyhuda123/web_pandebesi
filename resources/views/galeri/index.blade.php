@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('galeri.create') }}" class="btn btn-md btn-success mb-3">TAMBAH Foto</a>
+                        <a href="{{ route('galeri.create') }}" class="btn btn-md btn-success mb-3">+ Tambah Foto</a>
                         <table class="table table-bordered">
                             <thead>
                               <tr>
