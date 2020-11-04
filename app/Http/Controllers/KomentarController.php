@@ -10,7 +10,9 @@ class KomentarController extends Controller
 {
   public function index()
   {
+      // memanggil data dari tabel komentars
       $komentars = Komentar::latest()->paginate(10);
+      // mengirim data komentars ke index
       return view('komentar.index', compact('komentars'));
   }
 }

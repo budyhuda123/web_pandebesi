@@ -11,21 +11,20 @@ class GaleriController extends Controller
 
  public function index()
  {
+    // memanggil data dari tabel galeris
     $galeris = Galeri::latest()->paginate(10);
+    // mengirim data galeris ke index
     return view('galeri.index', compact('galeris'));
  }
+
+ // method untuk menampilkan view form tambah galeris
  public function create()
  {
+     // memanggil view tambah
      return view('galeri.create');
  }
 
-
- /**
- * store
- *
- * @param  mixed $request
- * @return void
- */
+// method untuk insert data ke table galeris
  public function store(Request $request)
  {
      $this->validate($request, [
