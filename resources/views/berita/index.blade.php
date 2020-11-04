@@ -19,9 +19,11 @@
                         <table class="table table-bordered">
                             <thead>
                               <tr>
-                                <th scope="col">GAMBAR</th>
-                                <th scope="col">JUDUL</th>
+                                <th scope="col">Gambar</th>
+                                <th scope="col">Judul</th>
                                 <th scope="col">Konten</th>
+                                <th scope="col">Tanggal</th
+                                <th scope="col">Penulis</th>
                                 <th scope="col">AKSI</th>
                               </tr>
                             </thead>
@@ -32,7 +34,9 @@
                                         <img src="{{ Storage::url('public/beritas/').$berita->gambar }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $berita->judul }}</td>
-                                    <td>{!! $berita->isi !!}</td>
+                                    <td>{!! $berita->konten !!}</td>
+                                    <td>{{ $berita->tanggal }}</td>
+                                    <td>{{ $berita->  }}</td>
                                     <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('berita.destroy', $berita->id) }}" method="POST">
                                             <a href="{{ route('berita.edit', $berita->id) }}" class="btn btn-sm btn-primary">EDIT</a>
@@ -44,7 +48,7 @@
                                 </tr>
                               @empty
                                   <div class="alert alert-danger">
-                                      Data berita belum Tersedia.
+                                      Data berita belum tersedia.
                                   </div>
                               @endforelse
                             </tbody>
