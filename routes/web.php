@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -26,3 +27,8 @@ Route::resource('produk', ProdukController::class);
 Route::resource('galeri', GaleriController::class);
 //route berita
 Route::resource('berita', beritaController::class);
+//route komentar
+Route::resource('komentar', KomentarController::class);
+//route home
+Route::get('home','HomeController@index');
+Route::get('/home','HomeController@home');
